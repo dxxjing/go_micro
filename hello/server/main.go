@@ -17,6 +17,7 @@ func (g *GreeterServiceHandler) Hello(ctx context.Context, req *pb.HelloReq, rsp
 }
 
 func main() {
+
 	//创建新服务
 	service := micro.NewService(
 		micro.Name("Greeter"),
@@ -28,7 +29,7 @@ func main() {
 		fmt.Println("register err:",err)
 		return
 	}
-	//启动服务
+	//启动服务 注意 window系统 启动后 client找不到该服务
 	//默认使用mdns,若要指定etcd 则 go run main.go --registry=etcd
 	if err := service.Run(); err != nil{
 		fmt.Println("run err:",err)
