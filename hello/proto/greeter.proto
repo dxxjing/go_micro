@@ -1,0 +1,16 @@
+//cd hello
+//protoc --proto_path=. --micro_out=. --go_out=. proto/greeter.proto
+
+syntax = "proto3";
+
+service Greeter {
+    rpc Hello(HelloReq) returns (HelloRsp){}
+}
+
+message HelloReq{
+    string name = 1;
+}
+
+message HelloRsp{
+    string greeting = 1;
+}
