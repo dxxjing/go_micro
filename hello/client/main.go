@@ -11,7 +11,6 @@ func main() {
 	service := micro.NewService(
 		micro.Name("Greeter.client"),
 	)
-
 	service.Init()
 
 	greeter := pb.NewGreeterService("Greeter",service.Client())
